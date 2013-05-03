@@ -2,7 +2,9 @@ require 'chosi/decoratable/decorator_not_found'
 
 module Chosi::Decoratable
   def decorate(object, options = {})
-    if object.kind_of?(Array)
+    return decorate_with_array(object, options) if object.is_a?(Array)
+
+    if (defined?(ActiveRecord) && object.kind_of?(ActiveRecord::Relation))
       return decorate_with_array(object, options)
     end
 

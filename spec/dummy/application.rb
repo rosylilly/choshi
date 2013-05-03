@@ -9,7 +9,7 @@ ActiveRecord::Base.establish_connection(
 
 module Dummy
   class Application < ::Rails::Application
-    config.secret_token = 'alchol'
+    config.secret_token = Digest::SHA1.hexdigest('alchol')
     config.session_store :cookie_store, :key => '__alchol__'
     config.active_support.deprecation = :log
 
