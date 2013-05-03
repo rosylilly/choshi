@@ -1,4 +1,4 @@
-# Choshi(銚子) [![Build Status](https://travis-ci.org/rosylilly/choshi.png?branch=master)](https://travis-ci.org/rosylilly/choshi) [![Code Climate](https://codeclimate.com/github/rosylilly/choshi.png)](https://codeclimate.com/github/rosylilly/choshi)
+# Choshi(銚子) [![Build Status](https://travis-ci.org/rosylilly/choshi.png?branch=master)](https://travis-ci.org/rosylilly/choshi) [![Coverage Status](https://coveralls.io/repos/rosylilly/choshi/badge.png?branch=master)](https://coveralls.io/r/rosylilly/choshi) [![Code Climate](https://codeclimate.com/github/rosylilly/choshi.png)](https://codeclimate.com/github/rosylilly/choshi)
 
 Simple Decorator gem for Rails 3 and 4.
 
