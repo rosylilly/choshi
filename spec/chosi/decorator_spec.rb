@@ -6,6 +6,10 @@ describe Chosi::Decorator do
 
   subject(:decorator) { described_class.new(source, view_context) }
 
+  it 'should be included Chosi::Decoratable' do
+    expect(decorator).to be_a(Chosi::Decoratable)
+  end
+
   describe '#source' do
     subject { decorator.source }
 

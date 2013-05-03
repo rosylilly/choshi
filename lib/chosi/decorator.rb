@@ -1,4 +1,6 @@
 class Chosi::Decorator
+  include Chosi::Decoratable
+
   def initialize(source, view_context)
     @source = source
     @view_context = view_context
