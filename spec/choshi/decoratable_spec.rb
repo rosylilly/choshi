@@ -4,6 +4,7 @@ class Foo; end
 class FooDecorator < Choshi::Decorator; end
 class Foo::Bar; end
 class Foo::BarDecorator < Choshi::Decorator; end
+class Baz; end
 
 describe Choshi::Decoratable do
   let(:view_context) { stubs('view_context') }
@@ -37,6 +38,18 @@ describe Choshi::Decoratable do
         expect(decorated_object).to be_a(decorator)
       end
     end
+
+    context 'with already decorated object' do
+      let(:decorated_object) { decorator.new(object, view_context) }
+
+      subject(:redecorate_object) do
+        decoratable.decorate(decorated_object, :decorator => decorator)
+      end
+
+      example do
+        expect(redecorate_object.source).to eq(object)
+      end
+    end
   end
 
   describe '#decorator_for' do
@@ -52,6 +65,14 @@ describe Choshi::Decoratable do
       let(:object) { Foo::Bar.new }
 
       it { should == Foo::BarDecorator }
+    end
+
+    context 'when decorator is not found' do
+      let(:object) { Baz.new }
+
+      example do
+        expect { decorator }.to raise_error(Choshi::Decoratable::DecoratorNotFound)
+      end
     end
   end
 end
