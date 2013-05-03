@@ -1,3 +1,15 @@
+require 'coveralls'
+Coveralls.wear!
+
+require 'simplecov'
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start do
+  add_filter "/spec/dummy"
+end
+
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'rails'
