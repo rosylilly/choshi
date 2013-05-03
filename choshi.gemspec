@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Choshi::VERSION
   spec.authors       = ["Sho Kusano"]
   spec.email         = ["sho-kusano@cookpad.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Simple Decorator gem for Rails 3 and 4}
+  spec.summary       = %q{Simple Decorator gem for Rails 3 and 4}
+  spec.homepage      = "https://github.com/rosylilly/choshi"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
