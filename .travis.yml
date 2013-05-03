@@ -1,0 +1,18 @@
+language: ruby
+script: bundle exec rspec
+rvm:
+  - 1.8.7
+  - 1.9.3
+  - 2.0.0
+  - ruby-head
+gemfile:
+  - gemfiles/rails-3.0.x.gemfile
+  - gemfiles/rails-3.2.x.gemfile
+  - gemfiles/rails-head.gemfile
+  - Gemfile
+matrix:
+  exclude:
+    - rvm: 2.0.0
+      gemfile: gemfiles/rails-3.0.x.gemfile
+    - rvm: ruby-head
+      gemfile: gemfiles/rails.3.0.x.gemfile

@@ -1,0 +1,8 @@
+source :rubygems
+
+gem 'chosi', :path => '..'
+
+gem 'rails', :github => 'rails/rails'
+gem 'sqlite3'
+gem 'rspec-rails'
+gem 'mocha'
