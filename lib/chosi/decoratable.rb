@@ -1,8 +1,11 @@
-require 'active_support/inflector'
 require 'chosi/decoratable/decorator_not_found'
 
 module Chosi::Decoratable
   def decorate(object, options = {})
+    if object.kind_of?(Array)
+      return decorate_with_array(object, options)
+    end
+
     if object.kind_of?(Chosi::Decorator)
       object = object.source
     end
@@ -10,6 +13,10 @@ module Chosi::Decoratable
     decorator = options[:decorator] || decorator_for(object)
 
     decorator.new(object, view_context)
+  end
+
+  def decorate_with_array(relation, options)
+    relation.map { |object| decorate(object, options) }
   end
 
   def decorator_for(object)
