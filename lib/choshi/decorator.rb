@@ -1,5 +1,5 @@
-class Chosi::Decorator
-  include Chosi::Decoratable
+class Choshi::Decorator
+  include Choshi::Decoratable
 
   def self.auto_decorate(*methods)
     methods.each do |method_name|

@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'rails'
-require 'chosi'
+require 'choshi'
 
 require 'dummy/application'
 require 'rspec/rails'

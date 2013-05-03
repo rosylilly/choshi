@@ -1,4 +1,4 @@
-class UserDecorator < Chosi::Decorator
+class UserDecorator < Choshi::Decorator
   auto_decorate :books
 
   def name

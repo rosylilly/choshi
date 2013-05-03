@@ -1,6 +1,6 @@
-require 'chosi/decoratable/decorator_not_found'
+require 'choshi/decoratable/decorator_not_found'
 
-module Chosi::Decoratable
+module Choshi::Decoratable
   def decorate(object, options = {})
     return decorate_with_array(object, options) if object.is_a?(Array)
 
@@ -8,7 +8,7 @@ module Chosi::Decoratable
       return decorate_with_array(object, options)
     end
 
-    if object.kind_of?(Chosi::Decorator)
+    if object.kind_of?(Choshi::Decorator)
       object = object.source
     end
 

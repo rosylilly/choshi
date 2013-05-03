@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'chosi/version'
+require 'choshi/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "chosi"
-  spec.version       = Chosi::VERSION
+  spec.name          = "choshi"
+  spec.version       = Choshi::VERSION
   spec.authors       = ["Sho Kusano"]
   spec.email         = ["sho-kusano@cookpad.com"]
   spec.description   = %q{TODO: Write a gem description}

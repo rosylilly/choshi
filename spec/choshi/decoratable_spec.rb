@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 class Foo; end
-class FooDecorator < Chosi::Decorator; end
+class FooDecorator < Choshi::Decorator; end
 class Foo::Bar; end
-class Foo::BarDecorator < Chosi::Decorator; end
+class Foo::BarDecorator < Choshi::Decorator; end
 
-describe Chosi::Decoratable do
+describe Choshi::Decoratable do
   let(:view_context) { stubs('view_context') }
 
   subject(:decoratable) do
@@ -17,7 +17,7 @@ describe Chosi::Decoratable do
 
   describe '#decorate' do
     let(:object) { Hash.new }
-    let(:decorator) { Class.new(Chosi::Decorator) }
+    let(:decorator) { Class.new(Choshi::Decorator) }
 
     context 'without decorator option' do
       subject(:decorated_object) { decoratable.decorate(object) }

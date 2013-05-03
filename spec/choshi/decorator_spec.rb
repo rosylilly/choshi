@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe Chosi::Decorator do
+describe Choshi::Decorator do
   let(:source) { mock('source') }
   let(:view_context) { mock('view_context') }
 
   subject(:decorator) { described_class.new(source, view_context) }
 
-  it 'should be included Chosi::Decoratable' do
-    expect(decorator).to be_a(Chosi::Decoratable)
+  it 'should be included Choshi::Decoratable' do
+    expect(decorator).to be_a(Choshi::Decoratable)
   end
 
   describe '#source' do
