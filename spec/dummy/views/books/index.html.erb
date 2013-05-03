@@ -1,0 +1,5 @@
+<h1><%= @user.first_name %>'s books</h1>
+
+<ul><% @user.books.each do |book| %>
+  <li><%= book.title %> (<%= book.author_name %>)</li>
+<% end %></ul>

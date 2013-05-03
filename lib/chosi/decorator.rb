@@ -1,6 +1,16 @@
 class Chosi::Decorator
   include Chosi::Decoratable
 
+  def self.auto_decorate(*methods)
+    methods.each do |method_name|
+      self.class_eval(<<-EOF)
+        def #{method_name}
+          @_#{method_name} ||= decorate(@source.#{method_name})
+        end
+      EOF
+    end
+  end
+
   def initialize(source, view_context)
     @source = source
     @view_context = view_context

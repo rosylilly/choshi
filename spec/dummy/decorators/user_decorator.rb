@@ -1,4 +1,6 @@
 class UserDecorator < Chosi::Decorator
+  auto_decorate :books
+
   def name
     "#{first_name} #{last_name}".strip
   end

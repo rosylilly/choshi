@@ -21,7 +21,9 @@ end
 Dummy::Application.initialize!
 
 Dummy::Application.routes.draw do
-  resources :users
+  resources :users do
+    resources :books
+  end
 end
 
 class ApplicationController < ActionController::Base
@@ -35,6 +37,11 @@ class CreateTables < ActiveRecord::Migration
     create_table(:users) do |t|
       t.string :first_name
       t.string :last_name
+    end
+
+    create_table(:books) do |t|
+      t.references :user
+      t.string :title
     end
   end
 end
