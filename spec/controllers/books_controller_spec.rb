@@ -4,10 +4,10 @@ describe BooksController do
   render_views
 
   describe 'GET index' do
-    let!(:user) { User.create(first_name: 'Yamada', last_name: 'Taro') }
-    let!(:book) { Book.create(user: user, title: 'hon') }
+    let!(:user) { User.create(:first_name => 'Yamada', :last_name => 'Taro') }
+    let!(:book) { Book.create(:user => user, :title => 'hon') }
 
-    before { get :index, user_id: user.id }
+    before { get :index, :user_id => user.id }
 
     example do
       expect(response.body).to match("#{user.first_name}'s")

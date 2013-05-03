@@ -30,7 +30,7 @@ describe Chosi::Decoratable do
 
     context 'with decorator option' do
       subject(:decorated_object) do
-        decoratable.decorate(object, decorator: decorator)
+        decoratable.decorate(object, :decorator => decorator)
       end
 
       example do

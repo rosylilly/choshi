@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe UsersController do
   describe 'GET index' do
-    let!(:sho_kusano) { User.create(first_name: 'Sho', last_name: 'Kusano') }
-    let!(:rosylilly) { User.create(first_name: 'rosylilly') }
+    let!(:sho_kusano) { User.create(:first_name => 'Sho', :last_name => 'Kusano') }
+    let!(:rosylilly) { User.create(:first_name => 'rosylilly') }
 
     before { get :index }
 
@@ -14,9 +14,9 @@ describe UsersController do
   end
 
   describe 'GET show' do
-    let(:user) { User.create(first_name: 'Sho', last_name: 'Kusano') }
+    let(:user) { User.create(:first_name => 'Sho', :last_name => 'Kusano') }
 
-    before { get :show, id: user.id }
+    before { get :show, :id => user.id }
 
     example do
       expect(assigns(:user).name).to eq('Sho Kusano')
